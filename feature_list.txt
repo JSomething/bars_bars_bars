@@ -1,0 +1,104 @@
+Setup Production/Development Enviroment
+===============================
+- Github
+- Boostrap (manually)
+- CSS
+- Rails
+- Heroku
+
+Details
+--------
+I am going to use BDD
+Time Estimate: 4 hours
+
+
+Block Off Elements
+===================
+- Header
+  - Logo
+  - Nav Bar
+    - Login/Signup
+    - Nearby Deals/Night Out links
+- Sidebar
+  - Map
+- Content
+- Footer
+
+  Details
+  --------
+  I'm gonna use a a mix of custom CSS premade bootstrap elements.
+
+Time Estimate: 2 hours
+
+
+Header
+========
+- Logo
+  - make something nice with a hipster logo generator
+- Nav Bar
+  - Nearby Deals
+    - Will be active link on landing page
+  - Night Out
+    - Link to the custom search function
+
+Time Estimate: 1 hour
+
+
+Sidebar
+========
+- Map
+  - Displayed as a tall rectangle (for now?)
+  - Changes with search results/move hovers w/ results list
+
+Time Estimate: 1 day?
+
+Bar Database
+============
+- CRUD
+  - Rails Stuff
+    - Controller
+    - Model
+    - Views
+    - Tests
+    - Join Tables
+
+Time Estimate: 2 hours
+
+  - Javascript
+    - AJAX
+    - Controller
+    - View/Template
+
+Time Estimate: 1 day
+
+Database Search
+================
+- search form
+- AJAX
+- Google Maps API
+  - locations
+  - routes
+
+Time Estimate: 1 day
+
+Local Deals
+============
+- browser geocaching
+
+
+Users Authentication
+=====================
+- Rails: Devise
+
+Details
+--------
+Probably won't actually get to this. The main reason I want seperate users is to they can
+save past searches and create lists of their favorite venues to share with friends.
+
+
+
+
+
+
+
+

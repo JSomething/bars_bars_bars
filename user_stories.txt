@@ -1,0 +1,7 @@
+As a thrifty person trying to plan a night out, I want to find venues within my budget.
+
+As a lover of dance, I want to search a database of affordable venues with space to get weird.
+
+As a busy person, I want to see a list of any current drink specials in my immediate area.
+
+As a person with no sense of direction, I want to be able to view a map of my selected venues.
