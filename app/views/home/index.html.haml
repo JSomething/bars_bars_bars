@@ -1,19 +1,18 @@
 .wrap
   %ul.tabs.group
     %li
-      %a.active{:href => "#/one"} Near YOU
+      %a.active{:href => "#/one"} Nearby
     %li
-      %a{:href => "#/two"} Venue Search
+      %a{:href => "#/two"} Search
     %li
-      %a{:href => "#/three"} Saved Searches
+      %a{:href => "#/three"} Saved
   #content
     %p#one
-      Start your own adventure
-      = link_to 'Manage Venues', venues_path
-      = link_to 'SEACH', new_search_path
+      = link_to 'SEARCH', new_search_path, class: 'btn btn-danger'
     %p#two
-      = render 'maps/map'
-    %p#three Tabs , consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq
+      = link_to 'Manage Venues', venues_path
+      / = render 'maps/map'
+    %p#three 
 
 
 

@@ -1,4 +1,5 @@
 class Search < ActiveRecord::Base
+  serialize :venue_json, Hash
   def venues
     @venues ||= find_venues
   end

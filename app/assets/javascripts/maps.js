@@ -17,7 +17,7 @@ function performSearch()
 {
   var request = {
     bounds: map.getBounds(),
-    name: "McDonald's"
+    name: "The Gin Joint"
   }
   service.nearbySearch(request, handleSearchResults);
 }
@@ -36,8 +36,6 @@ function initialize(location)
 
   map = new google.maps.Map(document.getElementById("map-canvas"),
     mapOptions);
-
-  for 
 
   var marker = new google.maps.Marker({
     position: currentLocation,
