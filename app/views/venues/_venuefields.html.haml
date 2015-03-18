@@ -1,0 +1,40 @@
+= form_for(@venue) do |v|
+  %fieldset#venueform
+    = v.label :venue_name
+    = v.text_field :venue_name 
+    %br
+    = v.label :venue_category
+    = v.select :venue_category, options_for_select(Venue::CATEGORY_OPTIONS, v.object.venue_category), include_blank: "--- SELECT ---"
+    %br
+    = v.label :venue_subcategory
+    = v.select :venue_subcategory, options_for_select(Venue::SUBCATEGORY_OPTIONS, v.object.venue_subcategory), include_blank: "--- SELECT ---"
+    %br
+    = v.label :address
+    = v.text_field :address
+    %br
+    = v.label :dancing
+    = v.check_box :dancing
+    %br
+    = v.label :allows_under_21
+    = v.check_box :allows_under_21
+    %br
+    = v.label :food
+    = v.check_box :food
+    %br
+    = v.label :food
+    = v.check_box :food
+    %br
+    = v.label :groups
+    = v.check_box :groups
+    %br
+    = v.label :price_range
+    = v.select :price_range, options_for_select(Venue::PRICE_OPTIONS, v.object.price_range), include_blank: "--- Select ---"
+    %br
+    = v.label :opening_time
+    = v.time_select :opening_time
+    %br
+    = v.label :closing_time
+    = v.time_select :closing_time
+    %br
+  = v.submit "Submit", class: "btn btn-primary"
+

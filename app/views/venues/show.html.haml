@@ -1,0 +1,15 @@
+%h1
+  = @venue.venue_name
+%h3 
+  Specials
+
+  - @specials.each do |special|
+    %dl.dl-horizontal
+      %dt Description
+      %dd= special.description
+      %dt Start Time
+      %dd= special.start_time
+      %dt End Time
+      %dd= special.end_time
+%br
+  = link_to "Add Special", new_venue_special_path(@venue), class: 'btn btn-danger'

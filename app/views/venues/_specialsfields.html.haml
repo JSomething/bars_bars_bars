@@ -1,0 +1,9 @@
+%fieldset
+ = v.label :description
+ = v.text_area :description
+ %br
+ = v.select :active_days, options_for_select(["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"]), {}, {:multiple => true}
+ = v.label :start_time
+ = v.time_select :start_time
+ = v.label :end_time
+ = v.time_select :end_time

@@ -1,2 +1,36 @@
-BLAH
-  
+.wrap
+  %ul.tabs.group
+    %li
+      %a.active{:href => "#/one"} Near YOU
+    %li
+      %a{:href => "#/two"} Venue Search
+    %li
+      %a{:href => "#/three"} Saved Searches
+  #content
+    %p#one
+      Start your own adventure
+      = link_to 'Manage Venues', venues_path
+      = link_to 'SEACH', new_search_path
+    %p#two
+      = render 'maps/map'
+    %p#three Tabs , consectetur adipisicing elit. Pariatur modi quod quo iure recusandae eligendi q.t, consectetur adipisicing elit. Pariatur modi quod quo iureq
+
+
+
+
+
+
+/ #landingview
+/   .container
+/     .row
+/       .col-lg-4.col-lg-offset-4
+/         %h4 Start your adventure
+/     .row
+/       .col-lg-3
+/         %h4 Cheap drinks near YOU
+/       .col-lg-3
+/         %h4 Plan a night out
+/     .row
+/       .col-lg-4.col-lg-offset-2
+/         = link_to 'Manage Venues', venues_path
+/   = render 'maps/map'

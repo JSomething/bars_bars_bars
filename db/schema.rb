@@ -11,6 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150317232543) do
+
+  create_table "searches", force: :cascade do |t|
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.string   "venue_name",        limit: 255
+    t.string   "venue_category",    limit: 255
+    t.string   "venue_subcategory", limit: 255
+    t.string   "address",           limit: 255
+    t.boolean  "dancing",           limit: 1
+    t.boolean  "allows_under_21",   limit: 1
+    t.boolean  "food",              limit: 1
+    t.boolean  "has_specials",      limit: 1
+    t.boolean  "groups",            limit: 1
+    t.string   "price_range",       limit: 255
+    t.time     "opening_time"
+    t.time     "closing_time"
+  end
+
+  create_table "specials", force: :cascade do |t|
+    t.string   "description", limit: 255
+    t.string   "active_days", limit: 255
+    t.time     "start_time"
+    t.time     "end_time"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "venue_id",    limit: 4
+  end
+
+  create_table "venue_specials", force: :cascade do |t|
+    t.integer "venue_id",   limit: 4
+    t.integer "special_id", limit: 4
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string  "venue_name",        limit: 255
+    t.string  "venue_category",    limit: 255
+    t.string  "venue_subcategory", limit: 255
+    t.text    "address",           limit: 65535
+    t.boolean "dancing",           limit: 1
+    t.boolean "allows_under_21",   limit: 1
+    t.boolean "food",              limit: 1
+    t.boolean "has_specials",      limit: 1
+    t.boolean "groups",            limit: 1
+    t.string  "price_range",       limit: 255
+    t.time    "opening_time"
+    t.time    "closing_time"
+  end
 
 end

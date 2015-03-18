@@ -1,0 +1,27 @@
+= form_for @search do |f|
+  .field
+    = f.label :venue_category
+    = f.select :venue_category, options_for_select(Search::CATEGORY_OPTIONS, f.object.venue_category), include_blank: "--- SELECT ---"
+  .field
+    = f.label :venue_subcategory
+    = f.select :venue_subcategory, options_for_select(Search::SUBCATEGORY_OPTIONS, f.object.venue_subcategory), include_blank: "--- SELECT ---"
+  .field
+    = f.label :dancing
+    = f.check_box :dancing
+  .field
+    = f.label :allows_under_21
+    = f.check_box :allows_under_21
+  .field
+    = f.label :food
+    = f.check_box :food
+  .field
+    = f.label :has_specials
+    = f.check_box :has_specials
+  .field
+    = f.label :groups
+    = f.check_box :groups
+  .field
+    = f.label :price_range
+    = f.select :price_range, options_for_select(Venue::PRICE_OPTIONS, f.object.price_range), include_blank: "--- Select ---"
+  .actions
+    = f.submit "Submit", class: "btn btn-primary"

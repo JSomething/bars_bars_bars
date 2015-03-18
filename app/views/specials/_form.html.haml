@@ -1,0 +1,16 @@
+= form_for [@venue, @special] do |s|
+  = s.label :description
+  = s.text_field :description
+  %br
+  = s.label :active_days
+  = s.select :active_days, options_for_select(Special::ACTIVE_DAYS, s.object.active_days), {}, {:multiple => true}
+  %br
+  = s.label :start_time
+  = s.time_select :start_time
+  %br
+  = s.label :end_time
+  = s.time_select :end_time
+  %br
+  = s.submit "Submit", class: "btn btn-primary"
+
+
