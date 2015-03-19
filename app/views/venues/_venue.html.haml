@@ -1,19 +1,9 @@
-/ - @search.venues.each do |v|
-/   = v.venue_name
-/   %br
-/   .address
-/     = v.address
+= @address
 
-/ = render 'maps/map'
+/ .venues
+/   %h3
+/     = venue.venue_name
+/ .addresses
+/   = venue.address
 
-/ = venue.venue_name
-
-.venues
-  %h3
-    = venue.venue_name
-.addresses
-  = venue.address
-
-
-
-
+/ = @search.venues.map(&:address)

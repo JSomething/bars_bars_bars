@@ -10,6 +10,8 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
+    @addresses = @search.venues.map(&:address)
+    @venue_names = @search.venues.map(&:venue_name)
   end
 
   private

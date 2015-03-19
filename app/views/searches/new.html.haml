@@ -1,10 +1,10 @@
-= form_for @search do |f|, id: 'search-for'
+= form_for @search, id: 'search-for' do |f|
   .field
     = f.label :venue_category
-    = f.select :venue_category, id: 'category-select' options_for_select(Search::CATEGORY_OPTIONS, f.object.venue_category), include_blank: "--- SELECT ---"
+    = f.select :venue_category, options_for_select(Search::CATEGORY_OPTIONS, f.object.venue_category), include_blank: "--- SELECT ---"
   .field
     = f.label :venue_subcategory
-    = f.select :venue_subcategory, id: 'subcategory-select' options_for_select(Search::SUBCATEGORY_OPTIONS, f.object.venue_subcategory), include_blank: "--- SELECT ---"
+    = f.select :venue_subcategory, options_for_select(Search::SUBCATEGORY_OPTIONS, f.object.venue_subcategory), include_blank: "--- SELECT ---"
   .field
     = f.label :dancing
     = f.check_box :dancing, id: 'dancebox'

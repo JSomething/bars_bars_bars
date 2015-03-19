@@ -2,6 +2,7 @@
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"}
   %script{:src => "https://maps.googleapis.com/maps/api/js?libraries=places,weather&sensor=false", :type => "text/javascript"}
   #map-canvas
-  %button#refresh Refresh
-  %button#toggle_traffic Traffic
-  %button#toggle_weather Weather
+  #panel
+
+%input#to{:type => "hidden"}
+%a#to-link{:href => "#"} Route
