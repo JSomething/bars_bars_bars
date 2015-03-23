@@ -5,20 +5,23 @@ class Search < ActiveRecord::Base
   end
 
   PRICE_OPTIONS = [
-    "Blah",
-    "Blah 2",
-    "Blah 3"
+    "$",
+    "$$",
+    "$$$"
   ]
 
   CATEGORY_OPTIONS = [
     "Dive Bar",
-    "Cocktail Bar",
-    "Clubby Club"
+    "Cocktail Lounge",
+    "Clubby Club",
+    "Music Venue"
   ]
 
   SUBCATEGORY_OPTIONS = [
-    "Sleazy",
-    "Fancy"
+    "Casual",
+    "Upscale",
+    "Snooty",
+    "Touristy"
   ]
 
   private

@@ -1,8 +1,16 @@
 %mapbox
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"}
-  %script{:src => "https://maps.googleapis.com/maps/api/js?libraries=places,weather&sensor=false", :type => "text/javascript"}
-  #map-canvas
-  #panel
+  %input#to{:type => "hidden"}
+  %button.route
+    Route
+  %input{:onclick => "calculateRoute();", :type => "submit"}/
+  .row
+    .col-md-4
+      #map-canvas
+      #directions-panel
 
-%input#to{:type => "hidden"}
-%a#to-link{:href => "#"} Route
+      
+  
+  
+  
+

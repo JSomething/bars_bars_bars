@@ -19,7 +19,7 @@ class SpecialsController < ApplicationController
     @special = @venue.specials.create special_params
     if @special.save
       flash[:success] = "Special Added!"
-      redirect_to venue_specials_path(@venue)
+      redirect_to venues_path(@venue)
     end
   end
 
@@ -49,7 +49,14 @@ class SpecialsController < ApplicationController
       :description,
       :active_days,
       :start_time,
-      :end_time
+      :end_time,
+      :mon,
+      :tues,
+      :wed,
+      :thur,
+      :fri,
+      :sat,
+      :sun
       )
   end
 end

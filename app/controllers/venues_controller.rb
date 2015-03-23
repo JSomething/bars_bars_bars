@@ -5,7 +5,7 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find params[:id]
-    @specials = @venue.spe
+    @specials = @venue.specials
   end
 
   def new

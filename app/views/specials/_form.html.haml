@@ -2,14 +2,32 @@
   = s.label :description
   = s.text_field :description
   %br
-  = s.label :active_days
-  = s.select :active_days, options_for_select(Special::ACTIVE_DAYS, s.object.active_days), {}, {:multiple => true}
-  %br
   = s.label :start_time
   = s.time_select :start_time
   %br
   = s.label :end_time
   = s.time_select :end_time
+  %br
+  = s.label :mon
+  = s.check_box :mon
+  %br
+  = s.label :tues
+  = s.check_box :tues
+  %br
+  = s.label :wed
+  = s.check_box :wed
+  %br
+  = s.label :thur
+  = s.check_box :thur
+  %br
+  = s.label :fri
+  = s.check_box :fri
+  %br
+  = s.label :sat
+  = s.check_box :sat
+  %br
+  = s.label :sun
+  = s.check_box :sun
   %br
   = s.submit "Submit", class: "btn btn-primary"
 

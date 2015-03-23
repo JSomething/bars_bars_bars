@@ -1,18 +1,53 @@
-.wrap
-  %ul.tabs.group
+.tab
+  %ul.tabs
     %li
-      %a.active{:href => "#/one"} Nearby
+      %a{:href => "#"} Tab01
     %li
-      %a{:href => "#/two"} Search
+      %a{:href => "#"} Tab02
     %li
-      %a{:href => "#/three"} Saved
-  #content
-    %p#one
-      = link_to 'SEARCH', new_search_path, class: 'btn btn-danger'
-    %p#two
-      = link_to 'Manage Venues', venues_path
-      / = render 'maps/map'
-    %p#three 
+      %a{:href => "#"} Tab03
+  / / tabs
+  .tab_content
+    .tabs_item
+      %img{:src => "http://d13yacurqjgara.cloudfront.net/users/5411/screenshots/1413345/wellv2.png"}
+        %h4 
+          Tab 01 Neque ipsum dolor.
+        %p
+          = link_to 'SEARCH', new_search_path, class: 'btn btn-danger'
+          = link_to 'Manage Venues', venues_path, class: 'btn btn-primary'
+    / / tabs_item
+    .tabs_item
+      %img.alignleft.max_width{:alt => "tabs_shortcode2", :src => "http://d13yacurqjgara.cloudfront.net/users/424765/screenshots/1412407/ezyinsights.jpg"}
+        %h4 Tab02 Maiores, suscipit
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, suscipit, eaque asperiores neque numquam nam possimus dolorem ipsa aspernatur reiciendis?
+    / / tabs_item
+    .tabs_item
+      %img{:src => "http://d13yacurqjgara.cloudfront.net/users/347667/screenshots/1412641/untitled-1.jpg"}
+        %h4 Tab03
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, excepturi, minima, corporis deserunt quia quae sit officiis labore inventore autem a delectus consequuntur voluptatem modi eligendi similique sed nam vitae.
+    / / tabs_item
+  / / tab_content
+/ / tab
+
+
+
+
+
+/ .wrap
+/   %ul.tabs.group
+/     %li
+/       %a.active{:href => "#/one"} Nearby
+/     %li
+/       %a{:href => "#/two"} Search
+/     %li
+/       %a{:href => "#/three"} Saved
+/   #content
+/     %p#one
+/       
+/     %p#two
+/       
+/       / = render 'maps/map'
+/     %p#three 
 
 
 

@@ -10,9 +10,15 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    @addresses = @search.venues.map(&:address)
-    @venue_names = @search.venues.map(&:venue_name)
+    @results = @search.venues
+    @specials = @results.joins(:specials)
+    # @addresses = @search.venues.map(&:address)
+    # @venue_names = @search.venues.map(&:venue_name)
+    # @address_count = @addresses.length
+    # @address_count = @addresses.length
+    # @address_hash = @address_count.new(@address_count) {Hash.new}
   end
+
 
   private
 

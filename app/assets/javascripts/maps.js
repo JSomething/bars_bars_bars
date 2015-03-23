@@ -1,12 +1,14 @@
 var map;
 var directionsDisplay;
+var directionsService;
 var service;
 
-
-
+// set current location, directions display, map display, current position, marker
 function initialize(location)
 {
   console.log(location);
+
+  directionsDisplay = new google.maps.DirectionsRenderer();
 
   var currentLocation = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
 
@@ -16,67 +18,69 @@ function initialize(location)
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
-  map = new google.maps.Map(document.getElementById("map-canvas"),
-    mapOptions);
+// display map
+  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  directionsDisplay.setMap(map);
+  directionsDisplay.setPanel(document.getElementById('directions-panel'));
 
   var marker = new google.maps.Marker({
     position: currentLocation,
     map: map
   });
-
+  
 }
+// end initialize
 
-$(document).ready(function()
-{
-  navigator.geolocation.getCurrentPosition(initialize);
-  event.preventDefault();
+function calculateRoute() {
 
-
-});
-
-
-function calculateRoute(start, end) {
-  var items = ["259 East Bay St, Charleston, SC", "276 Meeting St, Charleston, SC", "12 Cumberland, Charleston, SC"];
-  var waypoints = [];
-  for (var i = 0; i < items.length; i++) {
-      var address = items[i];
-      if (address !== "") {
-          waypoints.push({
-              location: address,
-              stopover: true
-          })
-      }
-  };
   var directionsService = new google.maps.DirectionsService();
-  var start = new google.maps.LatLng(location.coords.latitude, location.coords.longitude);
-  var end = items.last;
+  var start = "510 Mill St., Mt. Pleasant, SC";
+
+
+  var end = "259 East Bat St, Charleston, SC";
+
+  var waypoints = [];
+
+  var venueArray = document.getElementById('venue_address').val();
+  for (var i = 0; i < venueArray.length; i++) {
+    waypoints.push({
+      location:venueArray[i].value,
+      stopover:true});
+    }
+
+
   var request = {
     origin: start,
     destination: end,
     waypoints: waypoints,
     optimizeWaypoints: true,
-    travelMode: google.maps.DirectionsTravelMode.WALKING
+    travelMode: google.maps.TravelMode.DRIVING
   };
-  
-  var directionsDisplay = new google.maps.DirectionsRenderer();
-    directionsDisplay.setMap(map);
-    directionsDisplay.setPanel(document.getElementById('panel'));
-    directionsService.route(request, function (response, status) {
-      if (status == google.maps.DirectionsStatus.OK) {
-        directionDisplay.setDirections(response);
+  // end var request
+  // var directionsDisplay = new google.maps.DirectionsRenderer();
+// renders directions in the panel
+  directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
       }
-      else {
-        $("#error").append("Can't get your route");
-      }
-      });
-
-    $(document).ready(function() {
-      
-      if (typeof navigator.geolocation == "undefined") {
-          $("#error").text("Your browser doesn't support the Geolocation API");
-          return;
-      })
+  });
 }
+
+ 
+$(document).ready(function()
+{
+  $(".route").on("click", function(event) {
+    console.log("what");
+    event.preventDefault();
+    calculateRoute();
+  });
+  navigator.geolocation.getCurrentPosition(initialize);
+
+});
+
+
+
+  
 
 
 
