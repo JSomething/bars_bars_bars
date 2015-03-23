@@ -34,10 +34,10 @@ function initialize(location)
 function calculateRoute() {
 
   var directionsService = new google.maps.DirectionsService();
-  var start = "510 Mill St., Mt. Pleasant, SC";
+  var start = $(".start").data("address");
+  console.log(start)
 
-
-  var end = "259 East Bat St, Charleston, SC";
+  var end = $(".end").data("address");
   // var end = document.getElementById('venue_address').value;
 
   var waypoints = [];
@@ -51,12 +51,12 @@ function calculateRoute() {
   //   }
 
 // finds each address and pushes it to waypoints
-  $('.address').each(function() {
+  $('.startbox').each(function() {
     console.log(this)
     waypoints.push({
       location:$(this).data("address"),
       stopover:true});
-    })
+    });
 
   console.log(waypoints)
 
@@ -84,6 +84,22 @@ $(document).ready(function()
     console.log("what");
     event.preventDefault();
     calculateRoute();
+  });
+
+  $(document).on("click", ".startbox", function() {
+    console.log($(this).data("address"))
+    $(this).removeClass("startbox").addClass("start")
+    $(".startbox").each(function() {
+      $(this).attr("disabled", true)
+    });
+  });
+
+  $(document).on("click", ".endbox", function() {
+    console.log($(this).data("address"))
+    $(this).removeClass("endbox").addClass("end")
+    $(".endbox").each(function() {
+      $(this).attr("disabled", true)
+    })
   });
   navigator.geolocation.getCurrentPosition(initialize);
 

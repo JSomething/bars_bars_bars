@@ -7,7 +7,7 @@
           .thumbnail#results
             %img{:alt => "...", :src => "http://placekitten.com/g/250/250"}
               .caption
-                %input#venue_address{:type=>"hidden", :value=>r.address}
+                %input.venue_address{:type=>"hidden", :value=>r.address}
                 %h3 
                   = r.venue_name
                 %p.address{:'data-address' => r.address}
@@ -24,12 +24,12 @@
                 .col-md-6
                   .checkbox
                     %label
-                      %input{:type => "checkbox"}
+                      %input.startbox{:type => "checkbox", :'data-address' => r.address}
                         Start
                 .col-md-6
                   .checkbox
                     %label
-                      %input{:type => "checkbox"}
+                      %input.endbox{:type => "checkbox", :'data-address' => r.address}
                         End
 
                   
