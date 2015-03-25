@@ -1,9 +1,10 @@
-%h1 Venues
-- @venues.each do |venue|
-  %dl.dl-horizontal
-    %dt Name
-    %dd= venue.venue_name
-    %dt View
-    %dd= link_to 'View', venue_path(venue)
+.venuelister
+  %h1 Venues
+  - @venues.each do |venue|
+    %dl.dl-horizontal
+      %dt Name
+      %dd= venue.venue_name
+      %dt View
+      %dd= link_to 'View', venue_path(venue)
 
-= link_to 'Add Venue', new_venue_path
+  = link_to 'Add Venue', new_venue_path

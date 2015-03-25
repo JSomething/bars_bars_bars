@@ -15,6 +15,10 @@
 
 // })
 
-
-  
+// $(document).on('click', '#submit-searches-button', function() {
+//   $('html, body').animate({
+//     scrollTop: $('#barsearchresults').offset()},
+//     1000);
+//     return false;
+// });
 

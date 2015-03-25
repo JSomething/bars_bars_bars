@@ -36,22 +36,22 @@
     %h1.intro Efficiency in Bar Hopping
     / CALL TO ACTION BUTTONS
     .buttons.inpage-scroll
-      %a.btn.btn-primary.custom-button.red-btn{:href => "#works"} Current Specials
+      %a.btn.btn-primary.custom-button.red-btn{:href => "#current-specials"} Current Specials
       %a.btn.btn-primary.custom-button.green-btn{:href => "#barsearch"} Search for a Bar
     / 3 SHORT MESSAGE ABOUT COMPANY
     .row.bottom-message-section
       .col-lg-4.col-sm-4
         .short-text
           %i.icon.icon-fontawesome-webfont-358
-          Find specials going on now!
+          Save time!
       .col-lg-4.col-sm-4
         .short-text
           %i.icon-fontawesome-webfont-286
-          Never go to a boring bar
+          Save money!
       .col-lg-4.col-sm-4
         .short-text
           %i.icon-fontawesome-webfont-347
-          Satisfaction guranteed
+          Never be bored!
   / / END BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES
 / / END HOME SECTION
 /
@@ -140,49 +140,15 @@
   \==============================
 %section.separator-one
   .color-overlay
-    %h3.container.text.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-      Blah Blah blah blah blah
+    %h2.container.text.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+      Please Drink Responsibly
     .wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
       = link_to "Manage Venues", new_venue_path, class: "btn btn-primary custom-button green-btn"
-      = link_to "Search", new_search_path, class: "btn btn-primary custom-button green-btn"
+    /   = link_to "Search", new_search_path, class: "btn btn-primary custom-button green-btn"
 / / / END SEPARATOR
 
 
-
-
-%section#barsearch.packages
-  .container
-    / SECTION HEADER
-    .section-header
-      / SECTION TITLE
-      %h2.white-text Bar Search
-      / SHORT DESCRIPTION ABOUT THE SECTION
-      %h6.white-text
-        Find the right spot for you.
-    / / END SECTION HEADER
-    .row#barsearchform
-      = render '/searches/new'
-
-
-
-
-
-%section#barsearchresults.our-team
-  .container
-    / SECTION HEADER
-    .section-header
-      / SECTION TITLE
-      %h2.dark-text BARS
-      / SHORT DESCRIPTION ABOUT THE SECTION
-      %h6
-    .barsearchresults
-    
-
-
-
-
-
-%section#works.works
+%section#current-specials.works
   .container
     / SECTION HEADER
     .section-header
@@ -206,9 +172,9 @@
               .project-info
                 .project-details
                   %h5.white-text.red-border-bottom
-                    Project Title
+                    Unlimited BEER
                   .details.white-text
-                    Web Design
+                    The Crunkleton
           / / PROJECT
           / PROJECT
           %li.wow.fadeInDown.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
@@ -217,9 +183,9 @@
               .project-info
                 .project-details
                   %h5.white-text.red-border-bottom
-                    Project Title
+                    Shots shots shots
                   .details.white-text
-                    Web Design
+                    Red Foo
           / / PROJECT
           / PROJECT
           %li.wow.fadeInDown.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
@@ -228,9 +194,9 @@
               .project-info
                 .project-details
                   %h5.white-text.red-border-bottom
-                    Project Title
+                    Half off amaretto
                   .details.white-text
-                    Web Design
+                    Nana's House
           / / PROJECT
           / PROJECT
           %li.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
@@ -239,9 +205,9 @@
               .project-info
                 .project-details
                   %h5.white-text.red-border-bottom
-                    Project Title
+                    $5 gin pints
                   .details.white-text
-                    Web Design
+                    The Peaky Blinders
           / / PROJECT
           / PROJECT
           %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.8s", "data-wow-offset" => "30"}
@@ -250,9 +216,9 @@
               .project-info
                 .project-details
                   %h5.white-text.red-border-bottom
-                    Project Title
+                    Rocket Fuel
                   .details.white-text
-                    Web Design
+                    Explosivo
           / / PROJECT
           / PROJECT
           %li
@@ -343,15 +309,44 @@
 
 
 
+
+%section#barsearch.packages
+  .container
+    / SECTION HEADER
+    .section-header
+      / SECTION TITLE
+      %h2.white-text Bar Search
+      / SHORT DESCRIPTION ABOUT THE SECTION
+      %h6.white-text
+        Find the right spot for you.
+    / / END SECTION HEADER
+    .row#barsearchform
+      = render '/searches/new'
+
+
+
+
+
+.barsearchresults
+    
+
+
+
+
+
+
+
+
+
 %section#team.our-team
   .container
     / SECTION HEADER
     .section-header
       / SECTION TITLE
-      %h2.dark-text Stuff
+      %h2.dark-text Please drink responsibly
       / SHORT DESCRIPTION ABOUT THE SECTION
       %h6
-        So cool
+        
     / / END SECTION HEADER
 
 

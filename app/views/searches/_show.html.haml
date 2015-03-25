@@ -32,57 +32,76 @@
 /                       %input.endbox{:type => "checkbox", :'data-address' => r.address}
 /                         End
 
-
-
-.row.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "3s", "data-wow-offset" => "40"}
-  - @results.each do |r|
-    = div_for r do
-      / MEMBER
-      .col-lg-3.col-sm-3
-        .team-member
-          %figure.profile-pic
-            %img{:alt => "", :src => "http://placekitten.com/g/250/250"}
-              / MEMBER PROFILE PIC
-          .member-details
-            %h5.dark-text.red-border-bottom
-              = r.venue_name
-            .position
-              = r.address
-          .social-icons
-            %ul.list-inline
-              %li
-                .label
-                  %input.checkbox.startbox{:type => "checkbox", :'data-address' => r.address}
-                    .span.checklist
-                      Start
-              %li
-                .label
-                  %input.checkbox.endbox{:type => "checkbox", :'data-address' => r.address}
-                    .span.checklist
-                      End
-              / %li
-              /   %a{:href => ""}
-              /     %i.icon-behance
-              / %li
-              /   %a{:href => ""}
-              /     %i.icon-dribbble
-          .details
-            - r.specials.each do |s|
-              %p
-                = s.description
-                  
-
-
-%mapbox
-
-  / %input#to{:type => "hidden"}
-  %button.route.btn.btn-primary.custom-button.green-btn
-    Route
-  .row
-    .col-lg-4
+%section#barsearchresults.our-team
+  .container
+  .section-header
+    / SECTION TITLE
+    %h2.dark-text BARS
+    / SHORT DESCRIPTION ABOUT THE SECTION
+    %h6
+      Pick where you want to start and where you want to end up. Hit 'Show My Path' and be on your way!
+  .row.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "3s", "data-wow-offset" => "40"}
+    - @results.each do |r|
+      = div_for r do
+        / MEMBER
+        .col-lg-3.col-sm-3
+          .team-member
+            %figure.profile-pic
+              %img{:alt => "", :src => "http://placekitten.com/g/250/250"}
+                / MEMBER PROFILE PIC
+            .member-details
+              %h5.dark-text.red-border-bottom
+                = r.venue_name
+              .position
+                = r.address
+            .social-icons
+              %ul.list-inline
+                %li
+                  .label
+                    %input.checkbox.startbox{:type => "checkbox", :'data-address' => r.address}
+                      .span.checklist
+                        Start
+                %li
+                  .label
+                    %input.checkbox.endbox{:type => "checkbox", :'data-address' => r.address}
+                      .span.checklist
+                        End
+                / %li
+                /   %a{:href => ""}
+                /     %i.icon-behance
+                / %li
+                /   %a{:href => ""}
+                /     %i.icon-dribbble
+            .details
+              - r.specials.each do |s|
+                %p
+                  = s.description
+  
+  .container
+    %h3.white-text.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+    %button.route.btn.btn-primary.custom-button.green-btn
+      Show my path!
+    / NEWSLETTER SECTION HEADING
+    / .sub-heading.white-text.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+    /   Sign Up for Email Updates on on News &amp; Offers
+.row
+  / FIRST PACKAGE
+  .col-lg-6.col-sm-6
+    .package.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
       #map-canvas
-    .col-lg-4
-    #directions-panel
+  .col-lg-6.col-sm-6
+    #directions-panel.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+
+
+/ %mapbox
+
+/   %button.route.btn.btn-primary.custom-button.green-btn
+/     Route
+/   .row
+/     .col-lg-4
+/       #map-canvas
+/     .col-lg-4
+/       #directions-panel
 
 
 :javascript
