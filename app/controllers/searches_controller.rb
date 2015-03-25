@@ -1,4 +1,8 @@
 class SearchesController < ApplicationController
+
+  before_action :all_searches, only: [:index, :new, :create]
+  respond_to :html, :js
+
   def new
     @search = Search.new
   end

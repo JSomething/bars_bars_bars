@@ -3,19 +3,23 @@ class Venue < ActiveRecord::Base
   accepts_nested_attributes_for :specials, allow_destroy: true
 
   PRICE_OPTIONS = [
-    "Blah",
-    "Blah 2",
-    "Blah 3"
+    "$",
+    "$$",
+    "$$$"
   ]
 
   CATEGORY_OPTIONS = [
     "Dive Bar",
-    "Cocktail Bar",
-    "Clubby Club"
+    "Cocktail Lounge",
+    "Taproom",
+    "Clubby Club",
+    "Music Venue"
   ]
 
   SUBCATEGORY_OPTIONS = [
-    "Sleazy",
-    "Fancy"
+    "Casual",
+    "Upscale",
+    "Snooty",
+    "Touristy"
   ]
 end

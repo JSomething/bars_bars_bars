@@ -10,8 +10,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require customs.css
+ *= require customs
+ *= require animate.min
+ *= require bootstrap.min
+ *= require jquery.vegas.min
+ *= require owl.carousel
+ *= require owl.theme
+ *= require pixeden-icons
+ *= require responsive
+ *= require styles
  *= require_tree .
  *= require_self
  */

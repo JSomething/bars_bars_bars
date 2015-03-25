@@ -13,4 +13,28 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap.min
+//= require html5shiv
+//= require jquery.fittext
+//= require jquery.knob
+//= require jquery.nav
+//= require jquery.vegas.min
+//= require owl.carousel.min
+//= require respond.min
+//= require scrollReveal
+//= require smoothscroll
+//= require wow.min
+//= require zerif
 //= require_tree .
+
+
+
+
+
+
+
+
+
+
+
+
+

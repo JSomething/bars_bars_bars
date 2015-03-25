@@ -2,6 +2,7 @@
 %html
   %head
     %title BARPATH
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
@@ -9,11 +10,6 @@
     %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"}
     %link{:href => "icon.png", :rel => "icon", :type => "image/icon"}
   %body
-    .navbar.navbar-default.navbar-fixed-top
-      .container
-        .navbar-header
-          = link_to "barPath", root_path, id: "logo"
-    =render 'layouts/header'
-    .main-content
-      = yield
+    = yield
+    .footer
       = render 'layouts/footer'

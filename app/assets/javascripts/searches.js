@@ -19,7 +19,7 @@ function initialize(location)
   };
 
 // display map
-  map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   directionsDisplay.setMap(map);
   directionsDisplay.setPanel(document.getElementById('directions-panel'));
 

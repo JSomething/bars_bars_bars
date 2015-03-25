@@ -10,6 +10,9 @@ gem 'pg', group: :production
 gem 'erb2haml'
 gem 'haml-rails'
 gem 'quiet_assets'
+gem 'jquery-turbolinks'
+gem 'font-awesome-rails'
+gem 'responders'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

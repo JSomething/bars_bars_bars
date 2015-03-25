@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :specials
   end
   root 'home#index'
+
   resources :searches
 
   # Example of regular route:

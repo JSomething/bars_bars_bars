@@ -29,6 +29,40 @@ Please feel free to use a different markup language if you do not plan to run
 
 
 
+
+
+ *= require styles
+ *= require animate.min
+ *= jquery.vegas.min
+ *= owl.carousel
+ *= owl.theme
+ *= pixeden-icons
+ *= responsive
+
+
+
+ //= require html5shiv
+//= require jquery.fittext
+//= require jquery.knob
+//= require jquery.nav
+//= require jquery.vegas.min
+//= require owl.carousel.min
+//= require bootstrap.min
+//= require respond.min
+//= require scrollReveal
+//= require smoothscroll
+//= require wow.min
+
+
+
+
+
+
+
+
+
+
+
 var map;
 var service;
 function handleSearchResults(results, status)
@@ -111,3 +145,90 @@ $(document).ready(function()
 {
   navigator.geolocation.getCurrentPosition(initialize);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tab
+  %ul.tabs
+    %li
+      %a{:href => "#"} Tab01
+    %li
+      %a{:href => "#"} Tab02
+    %li
+      %a{:href => "#"} Tab03
+  / / tabs
+  .tab_content
+    .tabs_item
+      %img{:src => "http://d13yacurqjgara.cloudfront.net/users/5411/screenshots/1413345/wellv2.png"}
+        %h4 
+          Tab 01 Neque ipsum dolor.
+        %p
+          = link_to 'SEARCH', new_search_path, class: 'btn btn-danger'
+          = link_to 'Manage Venues', venues_path, class: 'btn btn-primary'
+    / / tabs_item
+    .tabs_item
+      %img.alignleft.max_width{:alt => "tabs_shortcode2", :src => "http://d13yacurqjgara.cloudfront.net/users/424765/screenshots/1412407/ezyinsights.jpg"}
+        %h4 Tab02 Maiores, suscipit
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, suscipit, eaque asperiores neque numquam nam possimus dolorem ipsa aspernatur reiciendis?
+    / / tabs_item
+    .tabs_item
+      %img{:src => "http://d13yacurqjgara.cloudfront.net/users/347667/screenshots/1412641/untitled-1.jpg"}
+        %h4 Tab03
+        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, excepturi, minima, corporis deserunt quia quae sit officiis labore inventore autem a delectus consequuntur voluptatem modi eligendi similique sed nam vitae.
+    / / tabs_item
+  / / tab_content
+/ / tab
+
+
+
+
+
+/ .wrap
+/   %ul.tabs.group
+/     %li
+/       %a.active{:href => "#/one"} Nearby
+/     %li
+/       %a{:href => "#/two"} Search
+/     %li
+/       %a{:href => "#/three"} Saved
+/   #content
+/     %p#one
+/       
+/     %p#two
+/       
+/       / = render 'maps/map'
+/     %p#three 
+
+
+
+
+
+
+/ #landingview
+/   .container
+/     .row
+/       .col-lg-4.col-lg-offset-4
+/         %h4 Start your adventure
+/     .row
+/       .col-lg-3
+/         %h4 Cheap drinks near YOU
+/       .col-lg-3
+/         %h4 Plan a night out
+/     .row
+/       .col-lg-4.col-lg-offset-2
+/         = link_to 'Manage Venues', venues_path
+/   = render 'maps/map'
+
