@@ -1,9 +1,9 @@
 %mapbox
   %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"}
-  %input#to{:type => "hidden"}
+  / %input#to{:type => "hidden"}
   %button.route
     Route
-  %input{:onclick => "calculateRoute();", :type => "submit"}/
+  %input{:onclick => "calculateRoute();", :type => "submit"}
   .row
     .col-md-4
       #map-canvas

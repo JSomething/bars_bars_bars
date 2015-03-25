@@ -1,15 +1,21 @@
 class SearchesController < ApplicationController
 
-  before_action :all_searches, only: [:index, :new, :create]
-  respond_to :html, :js
+  # before_action :all_searches, only: [:index, :new, :create]
+  # respond_to :html, :js, :haml
 
   def new
     @search = Search.new
+
   end
 
   def create
     @search = Search.create! search_params
-    redirect_to @search
+    @results = @search.venues
+    # redirect_to search_path(@search)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -21,6 +27,7 @@ class SearchesController < ApplicationController
     # @address_count = @addresses.length
     # @address_count = @addresses.length
     # @address_hash = @address_count.new(@address_count) {Hash.new}
+
   end
 
 
