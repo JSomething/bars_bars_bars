@@ -1,7 +1,13 @@
 class SpecialsController < ApplicationController
+
+  before_filter :load_venues
+
+  def load_venues
+    @venue = Venue.find(params[:venue_id]) if params[:venue_id].present?
+  end
+
   def index
-    @venue = Venue.find params[:venue_id]
-    @specials = @venue.specials
+    @specials = @venue.present? ? @venue.specials : Special.all
   end
 
   def show
