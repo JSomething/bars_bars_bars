@@ -13,6 +13,7 @@ class Search < ActiveRecord::Base
   CATEGORY_OPTIONS = [
     "Dive Bar",
     "Cocktail Lounge",
+    "Wine Bar",
     "Taproom",
     "Clubby Club",
     "Music Venue"

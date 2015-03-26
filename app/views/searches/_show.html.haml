@@ -1,54 +1,16 @@
-
-/ .container
-/   .row
-/     - @results.each do |r|
-/       = div_for r do
-/         .col-lg-4
-/           .thumbnail.wow.bounceIn.animated#results
-/             %img{:alt => "...", :src => "http://placekitten.com/g/250/250"}
-/               .caption
-/                 %input.venue_address{:type=>"hidden", :value=>r.address}
-/                 %h3 
-/                   = r.venue_name
-/                 %p.address{:'data-address' => r.address}
-/                   = r.address
-/                 %p
-/                   - r.specials.each do |s|
-/                     %br
-/                     = s.description
-/               .row
-/                 .col-md-6
-/                   %a.btn.btn-primary{:href => "#", :role => "button"} View On Map
-/                   %a.btn.btn-default{:href => "#", :role => "button"} Check Out Specials
-/               .row
-/                 .col-md-6
-/                   .checkbox
-/                     %label
-/                       %input.startbox{:type => "checkbox", :'data-address' => r.address}
-/                         Start
-/                 .col-md-6
-/                   .checkbox
-/                     %label
-/                       %input.endbox{:type => "checkbox", :'data-address' => r.address}
-/                         End
-
 %section#barsearchresults.our-team
   .container
   .section-header
-    / SECTION TITLE
     %h2.dark-text BARS
-    / SHORT DESCRIPTION ABOUT THE SECTION
     %h6
       Pick where you want to start and where you want to end up. Hit 'Show My Path' and be on your way!
   .row.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "3s", "data-wow-offset" => "40"}
     - @results.each do |r|
       = div_for r do
-        / MEMBER
         .col-lg-3.col-sm-3
           .team-member
             %figure.profile-pic
-              %img{:alt => "", :src => "http://placekitten.com/g/250/250"}
-                / MEMBER PROFILE PIC
+              %img{:alt => "", :src => r.photo }
             .member-details
               %h5.dark-text.red-border-bottom
                 = r.venue_name
@@ -58,20 +20,19 @@
               %ul.list-inline
                 %li
                   .label
-                    %input.checkbox.startbox{:type => "checkbox", :'data-address' => r.address}
+                    %input.checkbox.startbox.startcheck{:type => "checkbox", :'data-address' => r.address, :'data-match-class' => "r_#{r.id}", :class => "r_#{r.id}"}
                       .span.checklist
                         Start
                 %li
                   .label
-                    %input.checkbox.endbox{:type => "checkbox", :'data-address' => r.address}
+                    %input.checkbox.endbox.endcheck{:type => "checkbox", :'data-address' => r.address, :'data-match-class' => "r_#{r.id}", :class => "r_#{r.id}"}
                       .span.checklist
                         End
-                / %li
-                /   %a{:href => ""}
-                /     %i.icon-behance
-                / %li
-                /   %a{:href => ""}
-                /     %i.icon-dribbble
+                %li
+                  .label
+                    %input.checkbox.deletebox.deletecheck{:type => "checkbox", :'data-address' => r.address, :'data-match-class' => "r_#{r.id}", :class => "r_#{r.id}"}
+                    .span.checklist
+                      Remove       
             .details
               - r.specials.each do |s|
                 %p
@@ -81,28 +42,12 @@
     %h3.white-text.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
     %button.route.btn.btn-primary.custom-button.green-btn
       Show my path!
-    / NEWSLETTER SECTION HEADING
-    / .sub-heading.white-text.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-    /   Sign Up for Email Updates on on News &amp; Offers
 .row
-  / FIRST PACKAGE
   .col-lg-6.col-sm-6
     .package.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
       #map-canvas
   .col-lg-6.col-sm-6
     #directions-panel.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-
-
-/ %mapbox
-
-/   %button.route.btn.btn-primary.custom-button.green-btn
-/     Route
-/   .row
-/     .col-lg-4
-/       #map-canvas
-/     .col-lg-4
-/       #directions-panel
-
 
 :javascript
   var map;
@@ -148,6 +93,7 @@
     // var end = document.getElementById('venue_address').value;
 
     var waypoints = [];
+
 
     // var venueArray = document.getElementById('venue_address').value;
     // console.log(venueArray)
@@ -196,7 +142,7 @@
 
     $(document).on("click", ".startbox", function() {
       console.log($(this).data("address"))
-      $(this).removeClass("startbox").addClass("start")
+      $(this).toggleClass("startbox").toggleClass("start")
       $(".startbox").each(function() {
         $(this).attr("disabled", true)
       });
@@ -204,11 +150,18 @@
 
     $(document).on("click", ".endbox", function() {
       console.log($(this).data("address"))
-      $(this).removeClass("endbox").addClass("end")
+      $(this).toggleClass("endbox").toggleClass("end")
+      match_class = $(this).data("match-class")
+      $(".startcheck." + match_class).toggleClass("startbox")
       $(".endbox").each(function() {
         $(this).attr("disabled", true)
       })
     });
+
+    $(document).on("click", ".deletebox", function() {
+      match_class = $(this).data("match-class")
+      $(".startcheck." + match_class).toggleClass("startbox")
+      });
     navigator.geolocation.getCurrentPosition(initialize);
 
   });
