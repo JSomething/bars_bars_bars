@@ -21,5 +21,7 @@ test:
   database: bar_path_test
 
 production:
-  <<: *default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
   database: bar_path_production
