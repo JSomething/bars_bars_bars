@@ -4,12 +4,8 @@
   \==============================
 .preloader
   .status &nbsp;
-/
-  \=========================
-  HOME SECTION
-  \==============================
+
 %header#home.header
-  / TOP BAR
   #main-nav.navbar.navbar-inverse.bs-docs-nav{:role => "banner"}
     .container
       .navbar-header.responsive-logo
@@ -29,296 +25,59 @@
           %li
             %a{:href => "#works"} Bar Search
 
-  / / END TOP BAR
-  / BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES
+
   .container
-    / HEADING
     %h1.intro Efficiency in Bar Hopping
-    / CALL TO ACTION BUTTONS
     .buttons.inpage-scroll
       %a.btn.btn-primary.custom-button.red-btn{:href => "#current-specials"} Current Specials
       %a.btn.btn-primary.custom-button.green-btn{:href => "#barsearch"} Search for a Bar
-    / 3 SHORT MESSAGE ABOUT COMPANY
-    .row.bottom-message-section
-      .col-lg-4.col-sm-4
-        .short-text
-          %i.icon.icon-fontawesome-webfont-358
-          Save time!
-      .col-lg-4.col-sm-4
-        .short-text
-          %i.icon-fontawesome-webfont-286
-          Save money!
-      .col-lg-4.col-sm-4
-        .short-text
-          %i.icon-fontawesome-webfont-347
-          Never be bored!
-  / / END BIG HEADING WITH CALL TO ACTION BUTTONS AND SHORT MESSAGES
-/ / END HOME SECTION
-/
-  \=========================
-  FOCUS SECTION
-  \==============================
 %section#focus.focus
   .container
-    / SECTION HEADER
     .section-header
-      / SECTION TITLE
       %h2.dark-text New to Charleston?
-      / SHORT DESCRIPTION ABOUT THE SECTION
       %h6
         Short or long stay, find bars you'll actually enjoy
-    / / END SECTION HEADER
-    / 4 FOCUS BOXES
+
     .row
-      / FIRST FOCUS BOXES
       .col-lg-3.col-sm-3.focus-box.red.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-        .service-icon
-          %i.pixeden.pd-icon-monitor
-          / FOCUS ICON
         %h5.red-border-bottom Categories!
-        / FOCUS HEADING
         %p
-          / FOCUS DESCRIPTION
           Never feel overdressed
-      / / END FIRST FOCUS BOX. Other boxes has same format
       .col-lg-3.col-sm-3.focus-box.green.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-        .service-icon
-          %span.pixeden.pd-icon-camera
         %h5.green-border-bottom Go dancing!
         %p
           Want to get weird on the dance floor or avoid it alltogether? Choose!
       .col-lg-3.col-sm-3.focus-box.blue.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-        .service-icon
-          %i.pixeden.pd-icon-email-marketing
         %h5.blue-border-bottom Allow nondrinkers?
         %p
           Don't let kids kill your buzz
       .col-lg-3.col-sm-3.focus-box.yellow.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-        .service-icon
-          %i.pixeden.pd-icon-check
         %h5.yellow-border-bottom Food?
         %p
           Fortify your stomach before drinks! Or not.
-    / / END 4 FOCUS BOXES
-    / / OTHER FOCUSES
-    / .other-focuses
-    /   %h5
-    /     %span.section-footer-title ALSO WE FOCUS ON
-    / / OTHER FOCUS LIST
-    / .other-focus-list.wow.fadeInUp.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-    /   %ul
-    /     %li
-    /       %i.icon-fontawesome-webfont-8>
-    /       WEB APPLICATIONS
-    /     %li
-    /       %i.icon-fontawesome-webfont-267>
-    /       SEARCH ENGINE OPTIMIZATION
-    /     %li
-    /       %i.icon-fontawesome-webfont-75>
-    /       CLOUD STORAGE
-    /     %li
-    /       %i.icon-fontawesome-webfont-358>
-    /       Project Management
-    /     %li
-    /       %i.icon-fontawesome-webfont-102>
-    /       IOS APP
-    /     %li
-    /       %i.icon-fontawesome-webfont-328>
-    /       ANDROID APP
-    /     %li
-    /       %i.icon-fontawesome-webfont-195>
-    /       WINDOWS APP
-    /     %li
-    /       %i.icon-fontawesome-webfont-297>
-    /       UX STRATEGY
-    / / END OTHER FOCUS LIST
-  / / END CONTAINER
-/ / END FOCUS SECTION
-/
-  \=========================
-  SEPARATOR ONE
-  \==============================
+
 %section.separator-one
   .color-overlay
     %h2.container.text.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
       Please Drink Responsibly
     .wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-      = link_to "Manage Venues", new_venue_path, class: "btn btn-primary custom-button green-btn"
+      / = link_to "Manage Venues", new_venue_path, class: "btn btn-primary custom-button green-btn"
     /   = link_to "Search", new_search_path, class: "btn btn-primary custom-button green-btn"
-/ / / END SEPARATOR
 
 
-%section#current-specials.works
-  .container
-    / SECTION HEADER
-    .section-header
-      / SECTION TITLE
-      %h2.dark-text Specials
-      / SHORT DESCRIPTION ABOUT THE SECTION
-      %h6
-        Daily and hourly specials going on NOW!
-    / / END SECTION HEADER
-    .row.projects
-      #loader
-        .loader-icon
-      #portfolio-list.col-md-12
-        / PORTFOLIO ITEMS
-        %ul.cbp-rfgrid
-          / PROJECT
-          %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              / %img{:alt => "project", :src => "assets/images/portfolio/1.jpg"}/
-              = image_tag("portfolio/1.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Unlimited BEER
-                  .details.white-text
-                    The Crunkleton
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInDown.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/2.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Shots shots shots
-                  .details.white-text
-                    Red Foo
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInDown.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/3.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Half off amaretto
-                  .details.white-text
-                    Nana's House
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/4.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    $5 gin pints
-                  .details.white-text
-                    The Peaky Blinders
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.8s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/5.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Rocket Fuel
-                  .details.white-text
-                    Explosivo
-          / / PROJECT
-          / PROJECT
-          %li
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/6.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/7.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.8s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/8.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.25s", "data-wow-duration" => "2s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/9.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInUp.animated{"data-wow-delay" => "0.25s", "data-wow-duration" => "2s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/10.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInUp.animated{"data-wow-delay" => "0.25s", "data-wow-duration" => "2s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/11.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / PROJECT
-          %li.wow.fadeInRight.animated{"data-wow-delay" => "0.25s", "data-wow-duration" => "2s", "data-wow-offset" => "30"}
-            %a.more{:href => "project.html"}
-              = image_tag("portfolio/12.jpg")
-              .project-info
-                .project-details
-                  %h5.white-text.red-border-bottom
-                    Project Title
-                  .details.white-text
-                    Web Design
-          / / PROJECT
-          / ...
-      / END OF PORTFOLIO ITEMS
-    / PROJECT DETAILS WILL BE LOADED HERE
-    #loaded-content
-    %a#back-button.red-btn{:href => "#"}
-      %i.icon-fontawesome-webfont-27
-      Go Back
-/ / END WORKS SECTION
+
+= render 'specials/index'
+
 
 
 
 
 %section#barsearch.packages
   .container
-    / SECTION HEADER
     .section-header
-      / SECTION TITLE
       %h2.white-text Bar Search
-      / SHORT DESCRIPTION ABOUT THE SECTION
       %h6.white-text
         Find the right spot for you.
-    / / END SECTION HEADER
     .row#barsearchform
       = render '/searches/new'
 
@@ -341,219 +100,6 @@
   .container
     .section-header
       %h2.dark-text Please drink responsibly
-      / SHORT DESCRIPTION
       %h6
         
-    / / END SECTION HEADER
-
-
-    / / TEAM MEMBERS
-    / .row.wow.fadeInRight.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "3s", "data-wow-offset" => "40"}
-    /   / MEMBER
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic1.jpg"}
-    /           / MEMBER PROFILE PIC
-    /       .member-details
-    /         %h5.dark-text.red-border-bottom Jason Daniels
-    /         .position
-    /           Founder
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-dribbble
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   / / END MEMBER
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic2.jpg"}
-    /       .member-details
-    /         %h5.dark-text.green-border-bottom Patricia Medina
-    /         .position
-    /           Senior Desigener
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic3.jpg"}
-    /       .member-details
-    /         %h5.dark-text.blue-border-bottom Eugene Lane
-    /         .position
-    /           Lead Developer
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic4.jpg"}
-    /       .member-details
-    /         %h5.dark-text.yellow-border-bottom Kathy Hudson
-    /         .position
-    /           Art Director
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic5.jpg"}
-    /       .member-details
-    /         %h5.dark-text.red-border-bottom Vincent Mccoy
-    /         .position
-    /           Project Manager
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-dribbble
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic6.jpg"}
-    /       .member-details
-    /         %h5.dark-text.green-border-bottom Gary Morrison
-    /         .position
-    /           Photographer
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic7.jpg"}
-    /       .member-details
-    /         %h5.dark-text.blue-border-bottom Patrick Sanchez
-    /         .position
-    /           Business Development
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-    /   .col-lg-3.col-sm-3
-    /     .team-member
-    /       %figure.profile-pic
-    /         %img{:alt => "", :src => "images/team/pic8.jpg"}
-    /       .member-details
-    /         %h5.dark-text.yellow-border-bottom Rachel Rogers
-    /         .position
-    /           Account Manager
-    /       .social-icons
-    /         %ul
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-facebook
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-twitter-alt
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-behance
-    /           %li
-    /             %a{:href => ""}
-    /               %i.icon-linkedin
-    /       .details
-    /         %p
-    /           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium sapiente voluptate nostrum ipsa tempora optio facilis beatae quo aut error corrupti officiis dolore accusantium rem rerum illum nulla sed quisquam.
-
-
-    / / END TEAM MEMBER LIST
-  / / END CONTAINER
-/ / END OUR TEAM SECTION
+   

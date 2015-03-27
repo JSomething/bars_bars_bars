@@ -1,0 +1,30 @@
+%section#current-specials.works
+  .container
+    / SECTION HEADER
+    .section-header
+      / SECTION TITLE
+      %h2.dark-text Specials
+      / SHORT DESCRIPTION ABOUT THE SECTION
+      %h6
+        Daily and hourly specials going on NOW!
+    .row.projects
+      #loader
+        .loader-icon
+      #portfolio-list.col-md-12
+        %ul.cbp-rfgrid
+          %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+            - @valid_specials.each do |s|
+              %a.more{:href => venues_path }
+                %img{:alt => "", :src => s.photo }
+                .project-info
+                  .project-details
+                    %h5.white-text.red-border-bottom
+                      = s.description
+                    .details.white-text
+                      = s.vname
+    #loaded-content
+    %a#back-button.red-btn{:href => "#"}
+      %i.icon-fontawesome-webfont-27
+      Go Back
+
+/ # = @valid_specials

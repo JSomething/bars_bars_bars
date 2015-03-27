@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150326194958) do
+ActiveRecord::Schema.define(version: 20150327053305) do
 
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",                    null: false
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20150326194958) do
     t.boolean  "fri",         limit: 1
     t.boolean  "sat",         limit: 1
     t.boolean  "sun",         limit: 1
+    t.string   "photo",       limit: 255
+    t.string   "vname",       limit: 255
   end
 
   create_table "venue_specials", force: :cascade do |t|
