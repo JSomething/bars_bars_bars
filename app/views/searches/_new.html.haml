@@ -1,13 +1,11 @@
 = form_for @search, :html => {:id => "bar-search"}, remote:true do |f|
-  .form-group
-    .label
-      Choose a category!
-      = f.select :venue_category, options_for_select(Search::CATEGORY_OPTIONS, f.object.venue_category), include_blank: "--- SELECT ---"
-  .form-group
-    .label
-      And a subcategory!
-      = f.select :venue_subcategory, options_for_select(Search::SUBCATEGORY_OPTIONS, f.object.venue_subcategory), include_blank: "--- SELECT ---"
+  %span.custom-dropdown
+    = f.select :venue_category, options_for_select(Search::CATEGORY_OPTIONS, f.object.venue_category), include_blank: "What kinda place?"
+  %span.custom-dropdown
+    = f.select :venue_subcategory, options_for_select(Search::SUBCATEGORY_OPTIONS, f.object.venue_subcategory), include_blank: "Let's set the mood"
   .checkboxgroup
+    %br
+    %br
     .checkbox
       .label
         = f.check_box :dancing, id: 'dancebox'
@@ -28,10 +26,12 @@
       .label
         = f.check_box :groups, id: 'groupbox'
         Going out in a group?
-  .field
-    .label
-      Finally, a price range:
-      = f.select :price_range, options_for_select(Venue::PRICE_OPTIONS, f.object.price_range), include_blank: "--- Select ---", class: "form-control", id: 'price-select'
+    %br
+    %br
+  %span.custom-dropdown
+    = f.select :price_range, options_for_select(Venue::PRICE_OPTIONS, f.object.price_range), include_blank: "Pick your price range!", class: "form-control", id: 'price-select'
   .actions
+    %br
+    %br
     = f.submit "Submit", class: "btn btn-primary custom-button red-btn wow fadeInLeft animated", id: 'submit-searches-button'
 

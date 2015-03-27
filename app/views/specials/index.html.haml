@@ -1,2 +1,30 @@
-- @specials.each do |s|
-  = s.description
+%section#current-specials.works
+  .container
+    / SECTION HEADER
+    .section-header
+      / SECTION TITLE
+      %h2.dark-text Specials
+      / SHORT DESCRIPTION ABOUT THE SECTION
+      %h6
+        Daily and hourly specials going on NOW!
+    / / END SECTION HEADER
+    .row.projects
+      #loader
+        .loader-icon
+      #portfolio-list.col-md-12
+        / PORTFOLIO ITEMS
+        %ul.cbp-rfgrid
+          / PROJECT
+          %li.wow.fadeInLeft.animated{"data-wow-delay" => "0.15s", "data-wow-duration" => "1.5s", "data-wow-offset" => "30"}
+            %a.more{:href => "project.html"}
+              / %img{:alt => "project", :src => "assets/images/portfolio/1.jpg"}/
+              = image_tag("portfolio/1.jpg")
+              .project-info
+                .project-details
+                  %h5.white-text.red-border-bottom
+                    Unlimited BEER
+                  .details.white-text
+                    The Crunkleton
+
+- @specials_filtered.each do |special|
+  = special.description

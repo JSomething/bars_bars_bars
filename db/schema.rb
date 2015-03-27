@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325215218) do
+ActiveRecord::Schema.define(version: 20150326194958) do
 
   create_table "searches", force: :cascade do |t|
     t.datetime "created_at",                    null: false
@@ -32,7 +32,6 @@ ActiveRecord::Schema.define(version: 20150325215218) do
 
   create_table "specials", force: :cascade do |t|
     t.string   "description", limit: 255
-    t.string   "active_days", limit: 255
     t.time     "start_time"
     t.time     "end_time"
     t.datetime "created_at",              null: false
