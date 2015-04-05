@@ -133,6 +133,9 @@
    
   $(document).ready(function()
   {
+
+    navigator.geolocation.getCurrentPosition(initialize);
+    
     $(document).on("click", ".route", function(event) {
       console.log("what");
       event.preventDefault();
